@@ -27,7 +27,7 @@ SECRET_KEY = '4ut91nlqm=f75h!r-+f_2r^!0mji#wq%bi-gx!$qcpfn8_7202'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://popcornkravts.herokuapp.com']
 
 
 # Application definition
