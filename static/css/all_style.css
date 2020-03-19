@@ -1,0 +1,727 @@
+* {
+	margin:0px;
+	padding:0px;
+}
+
+body {
+	background-color: #000000;
+	color: #fff;
+	height: 100vh;
+	font-family: cursive;
+}
+
+header{
+	width: 100%;
+}
+
+.top {
+	width:100%;
+	display: inline-flex;
+	background-color: #1e1317;
+	height:100px;
+}
+
+.top a h1 {
+	color:#d53600;
+	font-size: 19pt;
+	padding-top:30px;
+	text-align: center;
+	margin-left: 40px;
+}
+.space{
+	width:800px;
+}
+.top a {
+	text-decoration: none;
+	opacity:90%;
+}
+
+.top a:hover {
+	opacity: 100%;
+}
+nav {
+	display: inline-flex;
+	text-align:center;
+}
+
+nav a {
+	padding:35px 20px 0px 20px;
+	margin-right:60px;
+	color: #fff;
+	font-size: 16pt;
+	text-decoration: none;
+}
+
+nav a:last-child{
+	margin-right: 0px;
+}
+
+nav a:hover {
+	color: #d53600;
+	background-color: #000000;
+}
+
+.panel{
+	margin-left: 0px;
+	color: #d53600;
+}
+
+.panel a{
+	color: #d53600;
+	text-decoration: none;
+}
+
+
+.find__film {
+	display: block-flex;
+	padding:28px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.find__film h4{
+	font-size: 13pt;
+	color: #d53600;
+}
+
+.find__film input {
+	font-size: 13pt;
+	text-align: center;
+	width:422px;
+	height:40px;
+	border: 3px solid #ffffff;
+	margin-left: 70px;
+
+}
+
+.find__film button {
+	width:80px;
+	border-radius: 15%;
+	padding: 8px 12px;
+	border: 3px solid #d53600;
+	background-color: #d53600;
+	color: #ffffff;
+	text-align: center;
+	opacity:85%;
+	visibility: hidden;
+}
+
+.find__film button:hover {
+	opacity:100%;
+	transform: scale(1.02);
+
+}
+
+
+.films {
+	padding-left: 80px;
+	position: absolute;
+	margin:auto;
+	display: inline-flex;
+}
+.films a{
+	color: #fff;
+	text-decoration: none;
+}
+.films a:hover{
+	color: #d53600;
+}
+
+.films-about {
+	padding-bottom: 55px;
+	text-transform: uppercase;
+}
+.films-about h1 {
+	text-align: center;
+	font-size:16pt;
+}
+
+.films-about p {
+	font-size: 10pt;
+	text-align: center;
+
+}
+
+figure {
+	width:300px;
+	margin-right: 50px;
+}
+
+figure:last-child {
+	margin-right: 0px;
+}
+figure figcaption{
+	text-align: left;
+	opacity: 80%;
+
+}
+
+img {
+	width:198px;
+	height:300px;
+}
+
+img:hover {
+	transform: scale(1.05);
+}
+
+/*films*/
+
+.main{
+	display: inline-flex;
+	padding-top: 15px;
+}
+
+aside {
+	padding-top: 30px;
+	height:560px;
+	width:272px;
+	background-color: #1e1317;
+}
+
+.find {
+	margin-left: 20px;
+	width:232px;
+	margin-bottom: 15px
+}
+
+.find h5{
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.find input {
+	width:200px;
+	padding: 10px 14px;
+	text-align: center;
+}
+
+.find button {
+	visibility: hidden;
+}
+
+.menu {
+	padding-left: 10px;
+}
+
+.menu h5 {
+	font-size: 14pt;
+	text-align: center;
+}
+
+.menu span {
+	display: flex;
+	margin-left: 10px;
+}
+
+.menu span input {
+	margin-top: 5px;
+}
+
+.menu li {
+	margin-left: 7px;
+	padding-bottom: 5px;
+	list-style-type: none;
+}
+
+.menu form button{
+	background-color: #d53600;
+	margin-left: 190px;
+	border: #d53600;
+	width: 45px;
+	border-radius: 5px;
+}
+.all_films {
+	margin-left:40px;
+	padding-right: 120px;
+	width: 900px;
+	height:600px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.all_films a {
+	text-decoration: none;
+	color:#ffffff;
+	opacity: 90%;
+}
+
+.all_films a:hover {
+	opacity: 100%;
+}
+
+.all_films figure {
+	background-color: #101010;
+	padding:17px;
+	display: inline-flex;
+	width: 900px;
+	height:350px;
+}
+
+.all_films img {
+	margin-right: 40px;
+	width:230px;
+	height:350px;
+}
+
+.all_films section {
+	width:600px;
+	height:350px;
+}
+
+.all_films section h3 {
+	margin-bottom: 25px;
+	text-align: center;
+	font-size: 17pt;
+}
+
+.all_films section p {
+	text-align: left;
+	font-size: 14pt;
+	opacity: 90%;
+}
+
+/*actors filmmakers*/
+
+
+.all {
+	margin-left:270px;
+	padding-right: 120px;
+	width: 900px;
+	height:600px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding-top: 15px;
+}
+
+.all a {
+	text-decoration: none;
+	color:#ffffff;
+	opacity: 90%;
+}
+
+.all a:hover {
+	opacity: 100%;
+}
+
+.all figure {
+	background-color: #101010;
+	padding:17px;
+	display: inline-flex;
+	width: 900px;
+	height:300px;
+}
+
+.all img {
+	margin-right: 40px;
+	width:230px;
+	height:300px;
+}
+
+.all section {
+	width:600px;
+	height:350px;
+}
+
+.all section h3 {
+	margin-bottom: 25px;
+	text-align: center;
+	font-size: 17pt;
+}
+
+.all section p {
+	text-align: left;
+	font-size: 14pt;
+	opacity: 90%;
+}
+
+/*reg*/
+
+*{	margin:0px;
+	padding:0px;
+}
+
+body {
+	background-color: #000000;
+	color: #fff;
+	height: 100%;
+	font-family: cursive;
+}
+
+.login{
+   	margin: 20vh 75vh;
+    width: 402px;
+	height: 200px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.reg {
+	margin: 7vh 75vh;
+    width: 402px;
+	height: 200px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.reg h2, .login h2{
+	width:402px;
+	text-align: center;
+	z-index: 10px;
+}
+
+.reg input, .login input {
+	width:402px;
+	height:60px;
+	text-align: center;
+	z-index: 5px;
+}
+
+.reg button, .login button{
+	margin-left: 125px;
+	margin-top: 15px;
+	padding: 10px;
+	width:150px;
+	height: 50px;
+	border-radius: 150px;
+	border: 3px solid #fff;
+	text-align: center;
+	font-size: 16px;
+	background-color: #000;
+	color: #fff;
+
+}
+
+/*film page*/
+
+
+
+.container_film{
+	margin-left: 300px;
+	width:950px;
+	background: #101010;
+	margin-top:  15px
+}
+
+.about-film {
+	padding: 25px 25px;
+	display: inline-flex;
+}
+
+.about-film section {
+	margin-left: 40px;
+	font-size: 14pt;
+}
+
+.about-film section h1 {
+	margin-bottom: 20px;
+	font-size: 17pt;
+}
+
+.about-film section li{
+	list-style-type: none;
+}
+.about-film section li a{
+	color: #fff;
+}
+.about-film section li a:hover{
+	color: #d53600;
+}
+.info{
+	margin-top: 50px;
+}
+
+img{
+	width:205px;
+	height:307.5px;
+}
+.article_film{
+	width: 650px;
+	height: 88px;
+	padding-left: 50px;
+	padding-bottom: 10px ;
+}
+.trailer video{
+    padding-top: 15px;
+	width: 540px;
+	height: 304px;
+}
+
+.trailer{
+	padding: 70px 0px 10px 50px;
+}
+.new_comment{
+	display: grid;
+}
+
+.new_comment label{
+	margin-left: 25px;
+	font-size: 14pt;
+}
+.new_comment textarea{
+	width: 865px;
+	height: 85px;
+	font-family: cursive;
+	margin: 5px 40px;
+}
+.new_comment input{
+	background-color: #d53600;
+	border: #d53600;
+	width: 70px;
+	height: 20px;
+	margin-left: 40px;
+
+}
+.authent{
+	margin: 0px 50px;
+}
+.authent a{
+	color: #d53600;
+}
+.authent span{
+	text-decoration: underline;
+}
+.authent a:hover{
+	color: #ff0004;
+}
+.all-comments h4{
+	padding-top: 20px;
+	padding-left: 25px;
+	font-size: 14pt;
+}
+.comment {
+    display: flex;
+    margin: 0px 50px;
+	padding: 15px 0px;
+    border-bottom: 1px solid #999;
+}
+
+.comment_info span{
+	color: #d53600;
+}
+
+
+.pagination{
+padding-left: 50px;
+		display: flex;
+	flex-direction: row;
+	list-style: none;
+	height: 30px;
+	margin-top: 2px;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+
+
+}
+.pagination li{
+	padding: 1px;
+	border: none;
+
+}
+ .pagination li a{
+	 color: #d57633;
+	 margin-left: 5px;
+	 text-decoration: none;
+	 font-size: 13pt;
+     margin-right: 4px;
+	 border: none;
+ }
+
+ .pagination li a:visited{
+	 text-decoration: none;
+ }
+  .pagination li a img{
+	  padding-left: 3px;
+	  height: 20px;
+	  width: 16px;
+	  background-color: #d53600;
+	  border-radius: 50px;
+	  margin-top: 3px;
+
+ }
+#back{
+	padding-right: 3px;
+	padding-left: 0px;
+}
+ #active{
+	 font-size: 13pt ;
+	 background-color: #d53600;
+	 border-radius: 50px;
+ }
+
+  #active-link{
+	 color: #000000;
+ }
+
+  .disabled{
+	  opacity:0%;
+	  display: none;
+  }
+
+/*actor fimmaker page*/
+
+
+.container_film{
+	margin-left: 300px;
+	width:950px;
+	background: #101010;
+	margin-top:  15px
+}
+
+.about-film {
+	padding: 25px 25px;
+	display: inline-flex;
+}
+
+.about-film section {
+	margin-left: 40px;
+	font-size: 14pt;
+}
+
+.about-film section h1 {
+	margin-bottom: 20px;
+	font-size: 17pt;
+}
+
+.about-film section li{
+	list-style-type: none;
+}
+.about-film section li a{
+	color: #fff;
+}
+.about-film section li a:hover{
+	color: #d53600;
+}
+.info{
+	margin-top: 50px;
+}
+
+img{
+	width:205px;
+	height:307.5px;
+}
+.article_film{
+	width: 650px;
+	height: 88px;
+	padding-left: 50px;
+	padding-bottom: 10px ;
+}
+.trailer video{
+    padding-top: 15px;
+	width: 540px;
+	height: 304px;
+}
+
+.trailer{
+	padding: 70px 0px 10px 50px;
+}
+.new_comment{
+	display: grid;
+}
+
+.new_comment label{
+	margin-left: 25px;
+	font-size: 14pt;
+}
+.new_comment textarea{
+	width: 865px;
+	height: 85px;
+	font-family: cursive;
+	margin: 5px 40px;
+}
+.new_comment input{
+	background-color: #d53600;
+	border: #d53600;
+	width: 70px;
+	height: 20px;
+	margin-left: 40px;
+
+}
+.authent{
+	margin: 0px 50px;
+}
+.authent a{
+	color: #d53600;
+}
+.authent span{
+	text-decoration: underline;
+}
+.authent a:hover{
+	color: #ff0004;
+}
+.all-comments h4{
+	padding-top: 20px;
+	padding-left: 25px;
+	font-size: 14pt;
+}
+.comment {
+    display: flex;
+    margin: 0px 50px;
+	padding: 15px 0px;
+    border-bottom: 1px solid #999;
+}
+
+.comment_info span{
+	color: #d53600;
+}
+
+
+.pagination{
+padding-left: 50px;
+		display: flex;
+	flex-direction: row;
+	list-style: none;
+	height: 30px;
+	margin-top: 2px;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+
+
+}
+.pagination li{
+	padding: 1px;
+	border: none;
+
+}
+ .pagination li a{
+	 color: #d57633;
+	 margin-left: 5px;
+	 text-decoration: none;
+	 font-size: 13pt;
+     margin-right: 4px;
+	 border: none;
+ }
+
+ .pagination li a:visited{
+	 text-decoration: none;
+ }
+  .pagination li a img{
+	  padding-left: 3px;
+	  height: 20px;
+	  width: 16px;
+	  background-color: #d53600;
+	  border-radius: 50px;
+	  margin-top: 3px;
+
+ }
+#back{
+	padding-right: 3px;
+	padding-left: 0px;
+}
+ #active{
+	 font-size: 13pt ;
+	 background-color: #d53600;
+	 border-radius: 50px;
+ }
+
+  #active-link{
+	 color: #000000;
+ }
+
+  .disabled{
+	  opacity:0%;
+	  display: none;
+  }
