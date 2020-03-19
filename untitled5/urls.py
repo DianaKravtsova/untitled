@@ -20,5 +20,5 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('popcorn/', include('movies.urls'))
+    path('', include('movies.urls'))
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
