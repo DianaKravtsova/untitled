@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
     {% block content %}
         <section class="container">
 		<section class="about">
@@ -13,8 +12,9 @@
 			</section>
 			<section class="info">
 				<li>{{ filmmaker.age }}</li>
-				<li>{% for film in filmmaker.filmmaker.all %}
-                    <a href="{{ film.get_absolute_url }}"> {{ film.name }} <br> </a>
+				<li>
+                    {% for film in filmmaker.filmmaker.all %}
+                        <a href="{{ film.get_absolute_url }}"> {{ film.name }} <br> </a>
                     {% endfor %}
                 </li>
 				
