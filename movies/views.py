@@ -69,6 +69,7 @@ def catalog(request):
     film = Film.objects.all()
     actor = Actor.objects.all()
     filmmaker = Filmmaker.objects.all()
+
     context = {
         'films': film,
     }
@@ -80,10 +81,29 @@ class FilmsDetail(View):
         film = Film.objects.get(url=slug)
         comment = Comment.objects.filter(film__url=slug)
 
+        paginator = Paginator(comment, 5)
+        page_number = request.GET.get('page', 1)
+        page = paginator.get_page(page_number)
+
+        is_paginated = page.has_other_pages()
+
+        if page.has_previous():
+            prev_url = '?page={}'.format(page.previous_page_number())
+        else:
+            prev_url = ''
+
+        if page.has_next():
+            next_url = '?page={}'.format(page.next_page_number())
+        else:
+            next_url = ''
+
         context={
             'film': film,
-            'comment': comment,
+            'comment': page,
             'form': CommentForm(),
+            'is_paginated': is_paginated,
+            'next_url': next_url,
+            'prev_url': prev_url
         }
         return render(request, "film_detail.html", context)
     def post(self,request,*args,**kwargs):
