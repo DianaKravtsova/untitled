@@ -78,7 +78,7 @@
       <ul class="pagination">
             <li class="page-item {% if not prev_url %}disabled {% endif %}">
               <a class="page-link" href="{{ prev_url }}" >
-                  <img src="/static/left-arrow.svg" id="back">
+                  <img src="../../media/left-arrow.svg" id="back">
               </a>
             </li>
               {% for n in comment.paginator.page_range %}
@@ -94,7 +94,7 @@
               {% endfor %}
             <li class="page-item {% if not next_url %} disabled {% endif %}">
                 <a class="page-link" href="{{ next_url }}" >
-                    <img src="/static/next.svg">
+                    <img src="../../media/next.svg">
                 </a>
             </li>
       </ul>
