@@ -43,8 +43,8 @@
 
  {% if user.is_authenticated %}
 
-     <form method="POST">
-         <section class="new_comment">
+     <form method="POST" >
+         <section class="new_comment" >
              {% csrf_token %}
              {{ form }}
              <input type="submit" value="Отправить " class="btn">
@@ -73,10 +73,7 @@
                      </section>
                  </section>
              {% endfor %}
-         </section>
-    </form>
-
-    <section class="navigation">
+          <section class="navigation">
     {% if is_paginated %}
       <ul class="pagination">
             <li class="page-item {% if not prev_url %}disabled {% endif %}">
@@ -103,6 +100,10 @@
       </ul>
     {% endif %}
     </section>
+         </section>
+    </form>
+
+
 	</section>
 
 {% endblock content %}

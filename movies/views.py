@@ -79,7 +79,17 @@ class FilmsDetail(View):
     def get(self, request, slug):
         film = Film.objects.get(url=slug)
         comment = Comment.objects.filter(film__url=slug)
-        paginator = Paginator(comment, 5)
+
+        context={
+            'film': film,
+            'comment': comment,
+            'form': CommentForm(),
+        }
+        return render(request, "film_detail.html", context)
+    def post(self,request,*args,**kwargs):
+        comment = CommentForm(request.POST)
+        all_comments = Comment.objects.filter(film__url=kwargs['slug'])
+        paginator = Paginator(all_comments, 5)
         page_number = request.GET.get('page', 1)
         page = paginator.get_page(page_number)
 
@@ -95,23 +105,21 @@ class FilmsDetail(View):
         else:
             next_url = ''
 
-        context={
-            'film': film,
-            'comment': page,
-            'form': CommentForm(),
-            'is_paginated' : is_paginated,
-            'next_url' : next_url,
-            'prev_url' : prev_url
-        }
-        return render(request, "film_detail.html", context)
-    def post(self,request,*args,**kwargs):
-        comment = CommentForm(request.POST)
         if comment.is_valid():
             comment = comment.cleaned_data
             film = Film.objects.get(url=kwargs['slug'])
             c = Comment(user=request.user,film=film,text=comment['text'])
             c.save()
-        return render(request, "film_detail.html", {'film': film,'form':CommentForm()})
+
+        context={
+            'film': film,
+            'form': CommentForm(),
+            'comment': page,
+            'is_paginated': is_paginated,
+            'next_url': next_url,
+            'prev_url': prev_url
+        }
+        return render(request, "film_detail.html", context)
 
 def Films(request):
     films = Film.objects.all()
