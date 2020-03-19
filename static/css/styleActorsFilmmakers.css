@@ -1,0 +1,54 @@
+
+
+
+.all {
+	margin-left:270px;
+	padding-right: 120px;
+	width: 900px;
+	height:600px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding-top: 15px;
+}
+
+.all a {
+	text-decoration: none;
+	color:#ffffff;
+	opacity: 90%;
+}
+
+.all a:hover {
+	opacity: 100%;
+}
+
+.all figure {
+	background-color: #101010;
+	padding:17px;
+	display: inline-flex;
+	width: 900px;
+	height:300px;
+}
+
+.all img {
+	margin-right: 40px;
+	width:230px;
+	height:300px;
+}
+
+.all section {
+	width:600px;
+	height:350px;
+}
+
+.all section h3 {
+	margin-bottom: 25px;
+	text-align: center;
+	font-size: 17pt;
+}
+
+.all section p {
+	text-align: left;
+	font-size: 14pt;
+	opacity: 90%;
+}
+

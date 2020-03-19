@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+		<section class="all">
+            {% if actors %}
+                 {% for a in actors %}
+                    <a href="{{ a.get_absolute_url}}">
+                        <figure>
+                            <img src="{{ MEDIA_ROOT }}{{ a.photography.url }}" alt="">
+                            <section>
+                                <h3>{{a.name}}</h3>
+                                <p> {{ a.biography }}</p>
+                            </section>
+                        </figure>
+                    </a>
+                {% endfor %}
+            {% endif %}
+        </section>
+
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+	<section class="container">
+		<section class="about">
+			<img src="{{ MEDIA_ROOT }}{{ actor.photography.url }}" alt="">
+
+			<section>
+				<h1>{{ actor.name }}</h1>
+				<li>Возраст</li>
+				<li>Фильмы</li>
+			</section>
+			<section class="info">
+                <li>{{ actor.age }}</li>
+                <li>{{ actor.year }}</li>
+				<li>
+                {%  for film in actor.film_actor.all%}
+                    <a href="{{ film.get_absolute_url }}"> {{ film.name }}</a>
+                    <br>
+                {% endfor %}
+                </li>
+				
+			</section>
+		</section>
+		<section class="article">
+			<p>{{ actor.biography }}</p>
+		</section>
+		
+	</section>
+
+{% endblock content %}

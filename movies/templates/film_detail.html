@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<section class="container_film">
+		<section class="about-film">
+			<img src="{{ MEDIA_ROOT }}{{ film.title_page.url }}" alt="">
+
+			<section>
+				<h1>{{film.name}}</h1>
+				<li>Год</li>
+				<li>Страна</li>
+				<li>Режиссер</li>
+                <li>Жанр</li>
+				<li>В главных ролях</li>
+
+			</section>
+			<section class="info">
+				<li>{{ film.year }}</li>
+				<li>{{ film.country }}</li>
+				<li><a href="{{ film.filmmaker.get_absolute_url }}">{{ film.filmmaker }}</a></li>
+                <li>
+                    {% for genre in film.genres.all %}
+                        {{ genre.name }}
+                    {% endfor %}
+                </li>
+				<li>
+                    {% for actor in film.actors.all %}
+                        <a href="{{ actor.get_absolute_url }}">{{ actor.name }}</a>
+                        <br>
+                    {% endfor %}
+                </li>
+			</section>
+		</section>
+		<section class="article_film">
+			<p>{{ film.article }}</p>
+		</section>
+		<section class="trailer">
+            <video controls>
+              <source src="{{ MEDIA_ROOT }}{{ film.trailer.url }}" type='video/mp4'>
+            </video>
+        </section>
+
+
+ {% if user.is_authenticated %}
+
+     <form method="POST">
+         <section class="new_comment">
+             {% csrf_token %}
+             {{ form }}
+             <input type="submit" value="Отправить " class="btn">
+         </section>
+ {% else %}
+         <section class="authent">
+             <br>Вы не можете добавлять комментарии
+             <br>
+             <a href="{% url 'login' %}">Авторизуйтесь</a> или
+             <a href="{% url 'register' %}">Зарегестрируйтесь</a>
+             <br>
+             <span>Вы будете переправлены на главную страницу </span>
+         </section>
+ {% endif %}
+         <section class="all-comments">
+             <h4>Комментарии:</h4>
+             <hr>
+             {% for comment_item in comment.object_list%}
+                 <section class="comment">
+                     <section class="comment_info">
+                         <span> {{ comment_item.user.username }} </span>
+                         <p> {{ comment_item.text }}</p>
+                         <section class="perms">
+                             <section class="date">{{ comment_item.date }}</section>
+                         </section>
+                     </section>
+                 </section>
+             {% endfor %}
+         </section>
+    </form>
+
+    <section class="navigation">
+    {% if is_paginated %}
+      <ul class="pagination">
+            <li class="page-item {% if not prev_url %}disabled {% endif %}">
+              <a class="page-link" href="{{ prev_url }}" >
+                  <img src="/static/left-arrow.svg" id="back">
+              </a>
+            </li>
+              {% for n in comment.paginator.page_range %}
+
+                  {% if comment.number == n %}
+                     <li id="active">
+                     <a  href="?page={{ n }}" id="active-link">{{ n }} </a>
+                     </li>
+                   {% elif n > comment.number|add:-3 and n < comment.number|add:3 %}
+                      <li class><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+                   {% endif %}
+
+              {% endfor %}
+            <li class="page-item {% if not next_url %} disabled {% endif %}">
+                <a class="page-link" href="{{ next_url }}" >
+                    <img src="/static/next.svg">
+                </a>
+            </li>
+      </ul>
+    {% endif %}
+    </section>
+	</section>
+
+{% endblock content %}

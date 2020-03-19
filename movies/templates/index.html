@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="panel">
+            {% if user.is_authenticated %}
+                <p class="text-right" > Привет, {{ user.username }}! |
+                    <a href="{% url 'logout' %}">Выйти</a> |
+{#                    <a href="/riddles/password-change">Change password</a>#}
+            {% if user.is_staff %}
+                | <a href="/riddles/admin">Admin panel</a>
+            {% endif %}
+                </p>
+            {% else %}
+                <p class="text-right">
+                    <a href="{% url 'login' %}">Войти</a> |
+                    <a href="{% url 'register' %}">Регистрация</a>
+                </p>
+            {% endif %}
+        </section>
+            <form class="find__film" action="{% url 'search' %}" method="get">
+				<h4>
+				поиск по фильму
+			</h4>
+                <br>
+				<input type="text" name="findFilm" required placeholder="Начало">
+				<button type="submit"></button>
+			</form>
+
+		<section class="films-about">
+			<h1>фильмы</h1>
+			<p>подборка фильмов для тебя</p>
+		</section>
+
+		<section class="films" name="films">
+            {%  if films %}
+            {% for i in films %}
+                <a href="{{ i.get_absolute_url }}">
+			    <figure class="film">
+				    <img src="{{ MEDIA_ROOT }}{{ i.title_page.url }}" alt="">
+			    	<figcaption>{{ i.name }}</figcaption>
+			    </figure>
+                </a>
+			{% endfor %}
+            {% endif %}
+		</section>
+    {% endblock content %}
+	</main>
+

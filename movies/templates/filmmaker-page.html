@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+        <section class="container">
+		<section class="about">
+			<img src="{{ MEDIA_ROOT }} {{ filmmaker.photography.url }}" alt="">
+
+			<section>
+				<h1>{{ filmmaker.name }}</h1>
+				<li>Возраст</li>
+				<li>Фильмы</li>
+				
+			</section>
+			<section class="info">
+				<li>{{ filmmaker.age }}</li>
+				<li>{% for film in filmmaker.filmmaker.all %}
+                    <a href="{{ film.get_absolute_url }}"> {{ film.name }} <br> </a>
+                    {% endfor %}
+                </li>
+				
+			</section>
+		</section>
+		<section class="article">
+			<p> {{ filmmaker.biography }}</p>
+		</section>
+        </section>
+    {% endblock content %}

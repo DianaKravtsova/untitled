@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+		<section class="all">
+            {% if filmmakers %}
+                {% for f in filmmakers %}
+                <a href="{{ f.get_absolute_url }}">
+                    <figure>
+                        <img src="{{ MEDIA_ROOT }}{{ f.photography.url }}" alt="">
+                        <section>
+                            <h3>{{ f.name }}</h3>
+                            <p>{{ f.biography }}</p>
+                        </section>
+                    </figure>
+                </a>
+                {% endfor %}
+            {% endif %}
+
+		</section>
+{% endblock content %}

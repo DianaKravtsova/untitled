@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+    {% block content %}
+ <section class="main">
+		<aside>
+			<form class="find" action="{% url 'search' %}" method="get">
+				<h5>поиск</h5>
+				<input type="text" name="findFilm" required placeholder="Начало">
+				<button type="submit"></button>
+			</form>
+			<section class="menu">
+                <form action="{% url 'filter'%}" method="get" name="filter">
+                    <h5>Жанры</h5>
+                    {% if genres %}
+                       {% for genre in genres %}
+                         <span><input type="checkbox" name="genre" value="{{ genre.id}}"><li>{{ genre.name }}</li></span>
+                       {% endfor %}
+                    {% endif %}
+                <button type="submit" style="" >найти</button>
+                </form>
+			</section>
+		</aside>
+
+		<section class="all_films">
+            {% if films %}
+                {% for i in films %}
+			<a href="{{ i.get_absolute_url }}">
+				<figure>
+					<img src="{{ MEDIA_ROOT }}{{ i.title_page.url }}" alt="">
+					<section>
+						<h3>{{ i.name }}</h3>
+						<p>{{ i.article }}</p>
+					</section>
+				</figure>
+			</a>
+                {% endfor %}
+            {% endif %}
+
+		</section>
+        </section>
+    {% endblock content %}

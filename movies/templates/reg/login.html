@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+	<section class="registration">
+			<form class="login" action="" name="reg" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}">
+               {{ form|crispy }}
+                <a href="{% url 'index' %}"><button type="submit" class="">
+                 Войти </button></a>
+            </form>
+
+		</section>
+{% endblock content %}
